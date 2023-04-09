@@ -6,5 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.mjs"
+  },
+  "dependencies": {
+    "koa2": "^2.0.0-alpha.7"
   }
 }
