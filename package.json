@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "chatgpt": "^5.2.2",
-    "koa": "^2.9.0"
+    "koa": "^2.9.0",
+    "koa-bodyparser": "^4.4.0"
   }
 }

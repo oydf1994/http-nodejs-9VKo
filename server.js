@@ -1,5 +1,8 @@
 const Koa = require('koa');
 const app = new Koa();
+const bodyParser = require('koa-bodyparser')
+app.use(bodyParser())
+
 let api;
 
 function getApi() {
@@ -18,7 +21,7 @@ getApi().then(res => {
   console.log("ChanGpt初始化成功")
 })
 app.use(async ctx => {
-  const res = await api.sendMessage('Hello World!')
+  const res = await api.sendMessage(ctx.body.text)
   ctx.body = res.text;
 });
 app.listen(process.env.PORT);
