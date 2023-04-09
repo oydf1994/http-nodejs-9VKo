@@ -8,6 +8,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "koa2": "^2.0.0-alpha.7"
+    "koa": "^2.9.0"
   }
 }
