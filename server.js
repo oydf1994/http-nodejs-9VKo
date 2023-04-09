@@ -1,9 +1,7 @@
 const Koa = require('koa');
 const app = new Koa();
 let api;
-getApi.then(res => {
-  api = res
-})
+
 function getApi() {
   return new Promise(async (resolve, reject) => {
     // To use ESM in CommonJS, you can use a dynamic import like this:
@@ -14,9 +12,10 @@ function getApi() {
     const api = new ChatGPTAPI({ apiKey: process.env.OPENAI_API_KEY })
     return resolve(api)
   })
-
-
 }
+getApi.then(res => {
+  api = res
+})
 app.use(async ctx => {
   const res = await api.sendMessage('Hello World!')
   console.log(res.text)
