@@ -8,7 +8,7 @@ const options = {
   targets: {
     '/(.*)': {
       // this is option of http-proxy-middleware
-      target: 'https://api.openai.com/v1', // target host
+      target: 'https://api.openai.com', // target host
       changeOrigin: true, // needed for virtual hosted sites
     }
   }
