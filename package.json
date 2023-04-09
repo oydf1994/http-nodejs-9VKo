@@ -8,8 +8,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "chatgpt": "^5.2.2",
     "koa": "^2.9.0",
-    "koa-bodyparser": "^4.4.0"
+    "koa-bodyparser": "^4.4.0",
+    "koa-http2-proxy": "^0.0.4"
   }
 }
