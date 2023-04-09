@@ -8,7 +8,7 @@ const options = {
   targets: {
     '/(.*)': {
       // this is option of http-proxy-middleware
-      target: 'https://www.baidu.com/', // target host
+      target: 'https://api.openai.com/v1', // target host
       changeOrigin: true, // needed for virtual hosted sites
     }
   }
