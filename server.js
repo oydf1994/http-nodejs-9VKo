@@ -4,4 +4,4 @@ var app = new Koa();
 
 app.use(proxy({ target: 'https://api.openai.com/v1' }));
 
-app.listen(3000);
+app.listen(process.env.PORT);
