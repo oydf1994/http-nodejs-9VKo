@@ -13,7 +13,7 @@ function getApi() {
     return resolve(api)
   })
 }
-getApi.then(res => {
+getApi().then(res => {
   api = res
 })
 app.use(async ctx => {
