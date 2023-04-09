@@ -1,7 +1,23 @@
-var Koa = require('koa');
-var proxy = require('koa-http2-proxy');
-var app = new Koa();
+const Koa = require('koa');
+const proxy = require('koa2-proxy-middleware');
+const bodyparser = require('koa-bodyparser');
 
-app.use(proxy({ target: 'https://api.openai.com/v1' }));
+const app = new Koa();
 
-app.listen(process.env.PORT);
+const options = {
+  targets: {
+    '/(.*)': {
+      // this is option of http-proxy-middleware
+      target: 'https://www.baidu.com/', // target host
+      changeOrigin: true, // needed for virtual hosted sites
+    }
+  }
+}
+
+app.use(proxy(options));
+
+
+app.use(bodyparser({
+  enableTypes: ['json', 'form', 'text']
+}));
+app.listen(process.env.PORT || 3000)
