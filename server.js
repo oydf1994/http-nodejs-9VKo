@@ -15,10 +15,10 @@ function getApi() {
 }
 getApi().then(res => {
   api = res
+  console.log("ChanGpt初始化成功")
 })
 app.use(async ctx => {
   const res = await api.sendMessage('Hello World!')
-  console.log(res.text)
   ctx.body = res.text;
 });
 app.listen(process.env.PORT);
